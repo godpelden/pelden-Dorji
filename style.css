@@ -11,32 +11,38 @@ color:#222;
 
 nav{
 background:#111;
-padding:15px 50px;
+padding:15px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 .logo{
 color:white;
-font-size:24px;
+font-size:22px;
 font-weight:bold;
 }
-nav ul{
+
+#navLinks{
 display:flex;
 list-style:none;
-gap:25px;
+gap:20px;
 }
 
-nav ul li{
-position:relative;
-}
-
-nav ul li a{
+#navLinks li a{
 color:white;
 text-decoration:none;
+font-size:16px;
+}
+
+.hamburger{
+display:none;
+font-size:32px;
+color:white;
+cursor:pointer;
 }
 
 .dropdown-content{
@@ -190,6 +196,17 @@ margin:10px 0;
 border:1px solid #ccc;
 border-radius:5px;
 }
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+input,
+textarea,
+button{
+width:100%;
+font-size:16px;
+}
 footer{
 background:#111;
 color:white;
@@ -243,4 +260,93 @@ transform:scale(1.03);
 
 .card{
 overflow:hidden;
+}
+/* MOBILE RESPONSIVE */
+
+@media(max-width:768px){
+
+/* NAVBAR */
+.hamburger{
+display:block;
+}
+
+#navLinks{
+display:none;
+flex-direction:column;
+position:absolute;
+top:70px;
+right:0;
+background:#111;
+width:220px;
+padding:20px;
+gap:20px;
+}
+
+#navLinks.active{
+display:flex;
+}
+
+/* HERO */
+.hero{
+padding:40px 20px;
+height:auto;
+min-height:100vh;
+}
+
+.hero h1{
+font-size:38px;
+line-height:1.2;
+}
+
+.hero p{
+font-size:16px;
+}
+
+/* GRID */
+.grid{
+grid-template-columns:1fr;
+}
+
+/* ABOUT */
+.about-container{
+flex-direction:column;
+text-align:center;
+}
+
+.about-container img{
+width:100%;
+max-width:300px;
+}
+
+/* MODAL */
+.modal-content{
+width:90%;
+margin-top:30%;
+}
+
+/* CAROUSEL */
+.carousel{
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+padding-bottom:10px;
+}
+
+.carousel .card{
+min-width:85%;
+scroll-snap-align:center;
+}
+
+/* SECTION */
+section{
+padding:60px 20px;
+}
+
+.section-title{
+font-size:32px;
+}
+
+/* BUTTON */
+.btn{
+width:100%;
+}
 }
