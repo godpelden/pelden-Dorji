@@ -12,6 +12,8 @@ if(event.target == modal){
 modal.style.display = 'none';
 }
 }
-
+function toggleMenu(){
+document.getElementById("navLinks").classList.toggle("active");
+}
 
 
